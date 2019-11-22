@@ -21,19 +21,19 @@
   "license": "MIT",
   "dependencies": {
     "@tosee/log": "^1.0.2",
-    "glob": "^7.1.2",
+    "glob": "^7.1.6",
     "reflect-metadata": "^0.1.13"
   },
   "devDependencies": {
-    "alsatian": "^3.1.0",
     "@types/glob": "^5.0.35",
-    "@types/jest": "^23.3.10",
-    "codecov": "^3.1.0",
+    "@types/jest": "^23.3.14",
+    "alsatian": "^3.1.0",
+    "codecov": "^3.6.1",
     "cross-env": "^6.0.3",
     "jest": "^23.6.0",
-    "supertest": "^3.3.0",
+    "supertest": "^3.4.2",
     "ts-jest": "^23.10.5",
     "ts-node": "^5.0.1",
-    "typescript": "^3.2.2"
+    "typescript": "^3.7.2"
   }
 }
