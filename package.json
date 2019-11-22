@@ -1,0 +1,39 @@
+{
+  "name": "@tosee/config",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "coverage": "nyc --reporter=lcov --reporter=html npm run test && nyc report",
+    "test": "cross-env NODE_ENV=test CONFIG=test/config alsatian test/index.ts",
+    "start": "node test/index.js",
+    "version": "rm -rf ./dist/*&&tsc",
+    "codecov": "codecov"
+  },
+  "nyc": {
+    "extends": "@istanbuljs/nyc-config-typescript",
+    "extension": [
+      ".ts"
+    ]
+  },
+  "author": "tosee",
+  "license": "MIT",
+  "dependencies": {
+    "@tosee/log": "^1.0.2",
+    "glob": "^7.1.2",
+    "reflect-metadata": "^0.1.13"
+  },
+  "devDependencies": {
+    "alsatian": "^3.1.0",
+    "@types/glob": "^5.0.35",
+    "@types/jest": "^23.3.10",
+    "codecov": "^3.1.0",
+    "cross-env": "^6.0.3",
+    "jest": "^23.6.0",
+    "supertest": "^3.3.0",
+    "ts-jest": "^23.10.5",
+    "ts-node": "^5.0.1",
+    "typescript": "^3.2.2"
+  }
+}
