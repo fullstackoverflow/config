@@ -11,6 +11,9 @@
     "version": "rm -rf ./dist/*&&tsc",
     "codecov": "codecov"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "nyc": {
     "extends": "@istanbuljs/nyc-config-typescript",
     "extension": [
@@ -20,16 +23,16 @@
   "author": "tosee",
   "license": "MIT",
   "dependencies": {
-    "@tosee/log": "^1.0.2",
+    "@tosee/log": "^1.1.4",
     "glob": "^7.1.6",
     "reflect-metadata": "^0.1.13"
   },
   "devDependencies": {
     "@types/glob": "^5.0.35",
-    "alsatian": "^3.1.0",
-    "codecov": "^3.6.1",
+    "alsatian": "^3.2.1",
+    "codecov": "^3.6.5",
     "cross-env": "^6.0.3",
     "ts-node": "^5.0.1",
-    "typescript": "^3.7.2"
+    "typescript": "^3.8.3"
   }
 }

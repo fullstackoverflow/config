@@ -1,11 +1,5 @@
 import { Test, Expect, TestFixture, SetupFixture } from "alsatian";
-import { Config, Value, Autowired } from "../lib";
-
-class InjectClass {
-    test() {
-        return true;
-    }
-}
+import { Config, Value } from "../lib";
 
 @TestFixture('Config')
 export class TestSuit {
@@ -30,13 +24,5 @@ export class TestSuit {
     @Test("value should support inject with @Value")
     public async decorator1() {
         Expect(this.test1).toEqual(true);
-    }
-
-    @Autowired()
-    InjectClass: InjectClass
-
-    @Test("class should support inject with @Autowired")
-    public async decorator2() {
-        Expect(this.InjectClass.test()).toEqual(true);
     }
 }
