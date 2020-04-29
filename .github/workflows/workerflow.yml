@@ -1,16 +1,19 @@
+on: push
 name: CI
-
-on: [push]
-
 jobs:
-  build:
-
+  all:
+    name: test
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@master
       - uses: actions/setup-node@v1
-        with:
-          node-version: '10.x'
-      - run: npm install
-      - run: npm test
+      - name: Install
+        run: npm install
+      - name: Test
+        run: npm test
+      - name: Publish
+        if: github.ref == 'refs/heads/master'
+        uses: mikeal/merge-release@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
