@@ -11,9 +11,6 @@
     "version": "rm -rf ./dist/*&&tsc",
     "codecov": "codecov"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "nyc": {
     "extends": "@istanbuljs/nyc-config-typescript",
     "extension": [
