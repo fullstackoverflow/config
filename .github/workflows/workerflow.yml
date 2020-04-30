@@ -11,7 +11,7 @@ jobs:
         run: npm run coverage
         run: npm run codecov
 
-on: tag
+on: tags
 jobs:
   name: Test
   runs-on: ubuntu-latest
