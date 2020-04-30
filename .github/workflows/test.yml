@@ -4,12 +4,12 @@ on: push
 jobs:
   Test:
     name: test and upload coverage
+    env:
+      NPM_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@v1
-      env:
-        NPM_AUTH_TOKEN:${{secrets.NPM_AUTH_TOKEN}}
       - name: Install
         run: npm install
       - name: Coverage
