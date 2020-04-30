@@ -4,6 +4,10 @@
   "description": "",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fullstackoverflow/config"
+  },
   "scripts": {
     "coverage": "nyc --reporter=lcov --reporter=html npm run test && nyc report",
     "test": "cross-env NODE_ENV=test CONFIG=test/config alsatian test/index.ts",
