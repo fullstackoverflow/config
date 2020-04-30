@@ -8,6 +8,8 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@v1
+      env:
+        NPM_AUTH_TOKEN:${{secrets.NPM_AUTH_TOKEN}}
       - name: Install
         run: npm install
       - name: Coverage
