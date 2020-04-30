@@ -9,11 +9,10 @@
     "url": "https://github.com/fullstackoverflow/config"
   },
   "scripts": {
-    "build":"tsc",
+    "build": "tsc",
     "coverage": "nyc --reporter=lcov --reporter=html npm run test && nyc report",
     "test": "cross-env NODE_ENV=test CONFIG=test/config alsatian test/index.ts",
     "start": "node test/index.js",
-    "version": "rm -rf ./dist/*&&tsc",
     "codecov": "codecov",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
