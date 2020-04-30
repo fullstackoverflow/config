@@ -9,6 +9,7 @@ jobs:
       - uses: actions/setup-node@v1
       - name: Install
         run: npm install
-      - name: Test
+      - name: Coverage
         run: npm run coverage
+      - name: Upload
         run: npm run codecov
