@@ -1,5 +1,6 @@
 name: Test
-on: tags
+on: push
+
 jobs:
   Test:
     name: test and upload coverage

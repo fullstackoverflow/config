@@ -1,5 +1,7 @@
 name: Test
-on: tags
+on: push
+  tags:
+    - "*"
 jobs:
   Test:
     name: test and upload coverage
