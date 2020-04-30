@@ -1,0 +1,14 @@
+name: Test
+on: tags
+jobs:
+  Test:
+    name: test and upload coverage
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@v1
+      - name: Install
+        run: npm install
+      - name: Test
+        run: npm run coverage
+        run: npm run codecov
