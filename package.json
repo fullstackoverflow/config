@@ -1,6 +1,6 @@
 {
   "name": "@tosee/config",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -14,7 +14,7 @@
     "test": "cross-env NODE_ENV=test CONFIG=test/config alsatian test/index.ts",
     "start": "node test/index.js",
     "codecov": "codecov",
-    "postversion":"git push --tags",
+    "postversion": "git push --tags",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "nyc": {
