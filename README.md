@@ -13,7 +13,7 @@ export CONFIG=./src/config
 export NODE_ENV=test
 ```
 
-src/default.ts
+src/config/default.ts
 ```
 export default {
     test1: false,
@@ -21,7 +21,7 @@ export default {
 };
 ```
 
-src/test.ts
+src/config/test.ts
 ```
 export default {
 	test1: true,
@@ -30,29 +30,23 @@ export default {
 ```
 
 ```
-@TestFixture('Config')
-export class TestSuit {
-    @Test("value should equal")
-    public async equal() {
-        Expect(Config.instance.test1).toEqual(true);
-    }
-
-    @Test("value should support expression")
-    public async Expression() {
-        Expect(Config.instance.test2).toEqual(3);
-    }
-
-    @Test("if default.ts exist,value should merge default")
-    public async MergeDefault() {
-        Expect(Config.instance.test3).toEqual(3);
-    }
-
+import { Config } from '@tosee/config'
+class TestSuit {
     @Value("test1")
     test1: Boolean;
 
-    @Test("value should support inject with @Value")
-    public async decorator1() {
-        Expect(this.test1).toEqual(true);
+    test(){
+        console.log(Config.instance.test1);
+        console.log(Config.instance.test2);
+        console.log(Config.instance.test3);
+        console.log(this.test1);
     }
 }
+new TestSuit().test();
+```
+```
+true
+3
+3
+true
 ```
