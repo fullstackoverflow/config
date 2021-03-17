@@ -1,4 +1,4 @@
-import { Test, Expect, TestFixture, SetupFixture } from "alsatian";
+import { Test, Expect, TestFixture, SetupFixture, Focus } from "alsatian";
 import { Config, Value } from "../lib";
 
 @TestFixture('Config')
@@ -6,6 +6,12 @@ export class TestSuit {
     @Test("value should equal")
     public async equal() {
         Expect(Config.instance.test1).toEqual(true);
+    }
+
+    @Test("static value should equal")
+    public async staticValue() {
+        console.log(TestSuit.test2, TestSuit.test2, TestSuit.test2);
+        Expect(TestSuit.test2).toEqual(Config.instance.test1);
     }
 
     @Test("value should support expression")
@@ -20,6 +26,9 @@ export class TestSuit {
 
     @Value("test1")
     test1: Boolean;
+
+    @Value("test1")
+    static test2: Boolean;
 
     @Test("value should support inject with @Value")
     public async decorator1() {

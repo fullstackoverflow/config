@@ -20,6 +20,6 @@ export function Value(params: string): PropertyDecorator {
 		descriptor.get = () => {
 			return Config.instance[params];
 		};
-		Reflect.defineProperty((target && target.prototype) || target, propertyKey, descriptor);
+		Reflect.defineProperty(target, propertyKey, descriptor);
 	};
 }
