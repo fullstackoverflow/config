@@ -10,7 +10,6 @@ export class TestSuit {
 
     @Test("static value should equal")
     public async staticValue() {
-        console.log(TestSuit.test2, TestSuit.test2, TestSuit.test2);
         Expect(TestSuit.test2).toEqual(Config.instance.test1);
     }
 
