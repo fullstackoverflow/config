@@ -1,4 +1,4 @@
-import { resolve } from "path";
+import { basename, extname, resolve } from "path";
 import { existsSync } from "fs";
 import { Logger } from "@tosee/log";
 
@@ -14,14 +14,19 @@ export class Config {
         const config_path = existsSync(resolve(Config.path, `./${process.env.NODE_ENV}.ts`)) ? resolve(Config.path, `./${process.env.NODE_ENV}.ts`) : resolve(Config.path, `./${process.env.NODE_ENV}.js`);;
         if (Config._instance == undefined) {
             let instance = {};
-            if (existsSync(default_path)) {
-                instance = require(default_path).default;
-            }
             if (existsSync(config_path)) {
+                if (existsSync(default_path)) {
+                    instance = require(default_path).default;
+                }
                 instance = Object.assign({}, instance, require(config_path).default);
+                Config.logger.success(`Config file load: ${basename(config_path)}`);
+            } else if (existsSync(default_path) && !existsSync(config_path)) {
+                instance = require(default_path).default;
+                Config.logger.success(`Config file load: ${basename(default_path)}`);
+            } else {
+
             }
             Config._instance = instance;
-            Config.logger.success(`Config file load: ${process.env.NODE_ENV}.ts`);
         }
         return Config._instance;
     }
