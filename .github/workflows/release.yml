@@ -24,8 +24,8 @@ jobs:
     - name: Upload
       run: npm run codecov
     - name: Build
-      run: npm run build
+      run: ls && npm run build && ls
     - name: AUTH
-      run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
+      run: ls && echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc && ls
     - name: Publish
-      run: npm publish --access public
+      run: ls && npm publish --access public && ls
