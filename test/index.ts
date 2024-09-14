@@ -52,7 +52,6 @@ export class TestSuit {
         Expect(this.test1).toEqual(true);
     }
 
-    @Focus
     @Timeout(20000)
     @Test("watcher should work")
     public async decorator2() {
