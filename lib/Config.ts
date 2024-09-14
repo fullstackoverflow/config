@@ -45,8 +45,8 @@ export class Config {
             throw new Error("Config path is not init, set path first");
         }
         try {
-            const default_path = existsSync(resolve(Config.path, `./default.ts`)) ? resolve(Config.path, `./default.ts`) : resolve(Config.path, `./default.js`);
-            const config_path = existsSync(resolve(Config.path, `./${process.env.NODE_ENV}.ts`)) ? resolve(Config.path, `./${process.env.NODE_ENV}.ts`) : resolve(Config.path, `./${process.env.NODE_ENV}.js`);
+            const default_path = existsSync(resolve(Config.path, `./default.js`)) ? resolve(Config.path, `./default.js`) : resolve(Config.path, `./default.ts`);
+            const config_path = existsSync(resolve(Config.path, `./${process.env.NODE_ENV}.js`)) ? resolve(Config.path, `./${process.env.NODE_ENV}.js`) : resolve(Config.path, `./${process.env.NODE_ENV}.ts`);
             let instance = {};
             if (existsSync(config_path)) {
                 if (existsSync(default_path)) {
